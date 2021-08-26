@@ -19,11 +19,11 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->enum('level', ['basico', 'admin', 'desenvolvedor']);
-            $table->enum('status', ['ativo', 'inativo']);
-            $table->integer('age');
-            $table->string('balance');
-            $table->longText('obs');
+            $table->enum('level', ['basico', 'admin', 'desenvolvedor'])->nullable();
+            $table->enum('status', ['ativo', 'inativo'])->nullable();
+            $table->integer('age')->nullable();
+            $table->string('balance')->nullable();
+            $table->longText('obs')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
